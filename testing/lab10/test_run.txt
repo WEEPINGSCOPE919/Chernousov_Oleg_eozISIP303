@@ -1,0 +1,61 @@
+============================= test session starts =============================
+platform win32 -- Python 3.15.2, pytest-8.3.3, pluggy-1.7.0 -- C:\Users\molly\AppData\Local\Python\pythoncore-3.15-64\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\molly\Desktop\Chernousov_Oleg_eozISIP303
+plugins: anyio-4.16.0, cov-5.0.0
+collecting ... collected 16 items
+
+testing/lab10/test_api.py::test_service_list_requests PASSED             [  6%]
+testing/lab10/test_api.py::test_service_create_request PASSED            [ 12%]
+testing/lab10/test_api.py::test_service_search_requests PASSED           [ 18%]
+testing/lab10/test_api.py::test_service_change_status PASSED             [ 25%]
+testing/lab10/test_api.py::test_api_list_requests PASSED                 [ 31%]
+testing/lab10/test_api.py::test_api_get_request_ok PASSED                [ 37%]
+testing/lab10/test_api.py::test_api_create_request PASSED                [ 43%]
+testing/lab10/test_api.py::test_api_delete_request PASSED                [ 50%]
+testing/lab10/test_api.py::test_api_create_empty_title PASSED            [ 56%]
+testing/lab10/test_api.py::test_api_create_invalid_category PASSED       [ 62%]
+testing/lab10/test_api.py::test_api_get_request_not_found PASSED         [ 68%]
+testing/lab10/test_api.py::test_api_assign_non_executor PASSED           [ 75%]
+testing/lab10/test_api.py::test_regression_health PASSED                 [ 81%]
+testing/lab10/test_api.py::test_regression_search_after_status_change PASSED [ 87%]
+testing/lab10/test_api.py::test_regression_filters_combined PASSED       [ 93%]
+testing/lab10/test_api.py::test_regression_integration_create_read PASSED [100%]
+
+============================== warnings summary ===============================
+..\..\AppData\Local\Python\pythoncore-3.15-64\Lib\site-packages\starlette\testclient.py:40
+  C:\Users\molly\AppData\Local\Python\pythoncore-3.15-64\Lib\site-packages\starlette\testclient.py:40: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+..\..\AppData\Local\Python\pythoncore-3.15-64\Lib\site-packages\fastapi\routing.py:233: 23 warnings
+  C:\Users\molly\AppData\Local\Python\pythoncore-3.15-64\Lib\site-packages\fastapi\routing.py:233: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    is_coroutine = asyncio.iscoroutinefunction(dependant.call)
+
+..\..\AppData\Local\Python\pythoncore-3.15-64\Lib\site-packages\starlette\_utils.py:40: 27 warnings
+testing/lab10/test_api.py: 28 warnings
+  C:\Users\molly\AppData\Local\Python\pythoncore-3.15-64\Lib\site-packages\starlette\_utils.py:40: DeprecationWarning: 'asyncio.iscoroutinefunction' is deprecated and slated for removal in Python 3.16; use inspect.iscoroutinefunction() instead
+    return asyncio.iscoroutinefunction(obj) or (callable(obj) and asyncio.iscoroutinefunction(obj.__call__))
+
+testing/lab10/test_api.py::test_service_create_request
+testing/lab10/test_api.py::test_api_create_request
+testing/lab10/test_api.py::test_api_delete_request
+testing/lab10/test_api.py::test_regression_integration_create_read
+  C:\Users\molly\Desktop\Chernousov_Oleg_eozISIP303\src\services.py:127: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    created_at=datetime.utcnow().isoformat(timespec="seconds"),
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+
+---------- coverage: platform win32, python 3.15.2-final-0 -----------
+Name              Stmts   Miss  Cover   Missing
+-----------------------------------------------
+src\__init__.py       0      0   100%
+src\api.py           69     18    74%   21-23, 30, 35, 40, 100-111, 123-124, 138-139, 167-170
+src\db.py            12      4    67%   18-22
+src\main.py           7      0   100%
+src\models.py        42      0   100%
+src\schemas.py       27      0   100%
+src\services.py     112     51    54%   34, 38, 42, 46-49, 67, 69, 95, 97, 99-103, 118, 120, 148-174, 180, 191, 194-197, 201-216
+-----------------------------------------------
+TOTAL               269     73    73%
+
+======================= 16 passed, 83 warnings in 0.26s =======================
